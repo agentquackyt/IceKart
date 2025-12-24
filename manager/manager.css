@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.title h1 {
+    margin-bottom: 0.5rem;
+}
+
+.status-indicator {
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background: #333;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+    text-transform: uppercase;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-large {
+    font-size: 1.3rem;
+    padding: 20px 40px;
+}
+
+.btn-green { background-color: #4CAF50; }
+.btn-red { background-color: #F44336; }
+.btn-blue { background-color: #2196F3; }
+.btn-yellow { background-color: #FFC107; color: black; }
+
+.registration-panel {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 15px;
+    align-items: center;
+}
+
+.input-text {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #2d2d2d;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.input-text:focus {
+    outline: none;
+    border-color: #2196F3;
+}
+
+.racer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.racer-card {
+    background: #1e1e1e;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    border: 1px solid #333;
+}
+
+.racer-card.disqualified {
+    opacity: 0.6;
+    border-color: #F44336;
+}
+
+.racer-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #333;
+    object-fit: cover;
+}
+
+.racer-info {
+    flex: 1;
+}
+
+.racer-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.racer-stats {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.racer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.btn-small {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+.btn-checkpoint {
+    background-color: #e67e22;
+    color: white;
+}
+
+.btn-dq {
+    background-color: #6c757d;
+    color: white;
+}
+

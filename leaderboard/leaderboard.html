@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+    <link rel="stylesheet" href="leaderboard.css">
+
+<body>
+    <div class="content">
+        <div class="header">
+            <div class="row">
+                <div class="logo">
+                    <img src="snowkart.png" alt="IceKart Logo" width="80" height="80">
+                </div>
+                <div class="title">
+                    <h1>IceKart</h1>
+                    <h2>Season 2025</h2>
+                </div>
+            </div>
+            <div class="additional-info row">
+                <div class="info-attribute lap-count">
+                    <h3>Laps</h3>
+                    <h2 data-lap-count="4">4/15</h2>
+                </div>
+                <div class="info-attribute time-count">
+                    <h3>Time</h3>
+                    <h2 data-time-count="4">0:12:12</h2>
+                </div>
+            </div>
+        </div>
+        <ul class="list-view">
+            <!-- Items will be populated by JS -->
+        </ul>
+    </div>
+    <script src="client.js"></script>
+    <script type="module" src="leaderboard.js"></script>
+</body>
+
+</html>

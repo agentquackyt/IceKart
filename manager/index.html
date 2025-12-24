@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IceKart Manager</title>
+    <link rel="stylesheet" href="manager.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="row">
+                <div class="logo">
+                    <img src="/leaderboard/snowkart.png" alt="IceKart Logo" width="80" height="80">
+                </div>
+                <div class="title">
+                    <h1>IceKart Manager</h1>
+                    <div class="status-indicator" id="status-display">IDLE</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="btn-start" class="btn btn-large btn-green">START RACE</button>
+            <button id="btn-stop" class="btn btn-large btn-red">STOP</button>
+            <button id="btn-reset" class="btn btn-large btn-blue">RESET</button>
+        </div>
+
+        <div class="registration-panel">
+            <input type="text" id="new-racer-name" placeholder="Enter racer name" class="input-text">
+            <button id="btn-register" class="btn btn-blue">Add Racer</button>
+        </div>
+
+        <div id="racer-grid" class="racer-grid">
+            <!-- Racers will be injected here -->
+        </div>
+    </div>
+    <script src="manager.js"></script>
+</body>
+</html>

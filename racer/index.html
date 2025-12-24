@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racer Info</title>
+    <link rel="stylesheet" href="racer.css">
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <div class="row">
+                <div class="logo">
+                    <img src="/leaderboard/snowkart.png" alt="IceKart Logo" width="80" height="80">
+                </div>
+                <div class="title">
+                    <h1>IceKart</h1>
+                    <h2>Live Telemetry</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div id="racer-info" class="racer-container hidden">
+            <div class="racer-sidebar">
+                <div class="card racer-card">
+                    <div class="avatar-container">
+                        <img id="racer-avatar" src="" alt="Avatar" class="avatar-body">
+                    </div>
+                    <h2 id="racer-name">Racer Name</h2>
+                    <div id="racer-status" class="status-badge">WAITING</div>
+                </div>
+                
+                <div class="card stats-card second">
+                    <div class="stat-row">
+                        <span class="stat-label">Position</span>
+                        <span class="stat-value" id="racer-position">0/0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Laps</span>
+                        <span class="stat-value" id="racer-laps">0/0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Checkpoints</span>
+                        <span class="stat-value" id="racer-checkpoints">0/0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Best Lap</span>
+                        <span class="stat-value" id="racer-best-lap">--:--.--</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Gap</span>
+                        <span class="stat-value" id="racer-gap">-</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Total Time</span>
+                        <span class="stat-value" id="racer-total-time">--:--.--</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="racer-data">
+                <div class="card data-card">
+                    <h3>Lap History</h3>
+                    <div class="table-scroll-container">
+                        <table class="results-table" id="merged-table">
+                            <thead id="merged-table-head">
+                                <tr>
+                                    <th>Lap</th>
+                                    <!-- Checkpoint headers will be injected here -->
+                                    <th>Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="merged-table-body">
+                                <tr class="empty-row"><td colspan="100%">No laps started</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="not-found" class="error-message hidden">
+            <h2>Racer not found</h2>
+            <p>Waiting for racer to join...</p>
+        </div>
+    </div>
+    <script src="racer.js"></script>
+</body>
+</html>
