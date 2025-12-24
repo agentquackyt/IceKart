@@ -42,11 +42,11 @@ let gameState: GameState = {
     racers: JSON.parse(JSON.stringify(INITIAL_RACERS)),
     startTime: null,
     endTime: null,
-    totalLaps: Bun.env.TOTAL_LAPS ? parseInt(Bun.env.TOTAL_LAPS) : 3,
+    totalLaps: Bun.env.TOTAL_LAPS ? parseInt(Bun.env.TOTAL_LAPS) : 5,
 };
 
 const server = serve({
-    port: 3000,
+    port: Bun.env.PORT ? parseInt(Bun.env.PORT) : 3000,
     async fetch(req, server) {
         const url = new URL(req.url);
 

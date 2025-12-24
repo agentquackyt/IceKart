@@ -36,7 +36,7 @@ public class WaypointCommand {
     // Suggestion provider for waypoint IDs
     private static final SuggestionProvider<FabricClientCommandSource> WAYPOINT_IDS = (context, builder) -> {
         for (String id : WaypointManager.getInstance().getWaypointIds()) {
-            if (id.toLowerCase().startsWith(builder.getRemainingLowerCase())) {
+            if (id.regionMatches(true, 0, builder.getRemaining(), 0, builder.getRemaining().length())) {
                 builder.suggest(id);
             }
         }
@@ -46,8 +46,8 @@ public class WaypointCommand {
     // Suggestion provider for waypoint types
     private static final SuggestionProvider<FabricClientCommandSource> WAYPOINT_TYPES = (context, builder) -> {
         for (Waypoint.Type type : Waypoint.Type.values()) {
-            String name = type.name().toLowerCase();
-            if (name.startsWith(builder.getRemainingLowerCase())) {
+            String name = type.name();
+            if (name.regionMatches(true, 0, builder.getRemaining(), 0, builder.getRemaining().length())) {
                 builder.suggest(name);
             }
         }

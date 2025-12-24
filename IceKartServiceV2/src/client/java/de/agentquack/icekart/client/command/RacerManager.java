@@ -34,9 +34,8 @@ public class RacerManager {
      */
     public void addRacer(String playerName) {
         // We add with null ID initially, the ID will be set when we receive init/update from server
-        String nameLower = playerName.toLowerCase();
-        if (!racerNameToId.containsKey(nameLower)) {
-            racerNameToId.put(nameLower, null);
+        if (!racerNameToId.containsKey(playerName)) {
+            racerNameToId.put(playerName, null);
             IcekartClient.LOGGER.debug("[IceKart] Racer added locally (awaiting server ID): {}", playerName);
         }
     }
@@ -46,9 +45,8 @@ public class RacerManager {
      * Called when we receive init or update events.
      */
     public void updateRacerFromServer(String id, String name) {
-        String nameLower = name.toLowerCase();
-        racerNameToId.put(nameLower, id);
-        racerIdToName.put(id, nameLower);
+        racerNameToId.put(name, id);
+        racerIdToName.put(id, name);
         IcekartClient.LOGGER.info("[IceKart] Racer synced from server: {} -> ID: {}", name, id);
     }
 
@@ -56,8 +54,7 @@ public class RacerManager {
      * Remove a racer by name
      */
     public boolean removeRacer(String playerName) {
-        String nameLower = playerName.toLowerCase();
-        String id = racerNameToId.remove(nameLower);
+        String id = racerNameToId.remove(playerName);
         if (id != null) {
             racerIdToName.remove(id);
             IcekartClient.LOGGER.debug("[IceKart] Racer removed: {} (ID: {})", playerName, id);
@@ -78,7 +75,7 @@ public class RacerManager {
      * Get the server-assigned racer ID for a player name
      */
     public Optional<String> getRacerId(String playerName) {
-        String id = racerNameToId.get(playerName.toLowerCase());
+        String id = racerNameToId.get(playerName);
         return Optional.ofNullable(id);
     }
 
